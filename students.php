@@ -44,7 +44,7 @@
             $data['content'] .= "<td> <input type='checkbox' name='students[]' value='$row[studentid]' ></td>";
             $data['content'] .= "</tr>";
         }
-        $data['content'] .= "</table>";
+        $data['content'] .= "</table><br>";
 
       // Delete button  
         $data['content'] .= "<input type='submit' name='deletebtn' value='Delete'/>";
