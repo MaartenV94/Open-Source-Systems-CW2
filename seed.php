@@ -11,10 +11,16 @@
     $db = new mysqli("localhost", "root", "", "cw2_students");
 
     $db->query("DELETE FROM student");
-    
+
+    $db->query("INSERT INTO student (studentid, password, dob, firstname, 
+                lastname, house, town, county, country, postcode) 
+                VALUES ('20000000', '$2y$10$.LJBOl64nZWEVVE/v5mgNuzR01zx1zoyXuGJUa/zp2U.MQxkps3LS', 
+                '1974-11-10', 'Jon', 'Smith', '23 Victoria Road', 'High Wycombe', 
+                'Bucks', 'UK', 'HP11 1RT');");
+
     $db->query("ALTER TABLE student AUTO_INCREMENT = 1");
 
-    foreach(range(1,30) as $x) {
+    foreach(range(20000001,29999999) as $x) {
         $student_id = $x;
 
         $db->query("
