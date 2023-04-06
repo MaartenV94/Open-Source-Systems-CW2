@@ -15,7 +15,8 @@ if (isset($_SESSION['id'])) {
    // if the form has been submitted
     if (isset($_POST['submit'])) {
 
-    if(empty($_POST['studentid']) || empty($_POST['password']) 
+      // Checks if form is empty + displays return message
+        if(empty($_POST['studentid']) || empty($_POST['password']) 
         || empty($_POST['dob']) || empty($_POST['firstname']) 
         || empty($_POST['lastname']) || empty($_POST['house']) 
         || empty($_POST['town']) || empty($_POST['county']) 
@@ -26,6 +27,7 @@ if (isset($_SESSION['id'])) {
     
     } else {
         
+      // encrypts the user password data    
         $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
      // SQL query inserting a new student record  
@@ -52,6 +54,7 @@ if (isset($_SESSION['id'])) {
       // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
         $data['content'] = <<<EOD
 
+    <!-- HTML FORM -->
     <h2>Add New Student</h2>
     <form name="frmdetails" action="" method="post">
 
@@ -87,6 +90,7 @@ EOD;
     echo template("templates/default.php", $data);
 
 } else {
+    // Redirect back to home page
     header("Location: index.php");
 }
 
