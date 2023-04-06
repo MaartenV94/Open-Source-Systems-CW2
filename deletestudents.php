@@ -27,7 +27,7 @@
                 foreach ($_POST['students'] as $student_id) {
                     $confirm_message .= "<input type='hidden' name='students[]' value='$student_id'>";
                 }
-                $confirm_message .= "<input type='button' value='Yes' onclick='showConfirm()' style='margin-right: 10px;'>";
+                $confirm_message .= "<input type='submit' name='confirm_delete' value='Yes' style='margin-right: 10px;'>";
             }
             $confirm_message .= "<input type='button' value='No' onclick='window.location.href=\"students.php\"'>";
             $confirm_message .= "</form>";
@@ -43,7 +43,8 @@
 
 <script>
     function showConfirm() {
-        if(confirm("Are you sure you want to delete?")) {
+        confirm_message = "Are you sure you want to delete?";
+        if(confirm(confirm_message)) {
             document.forms[0].submit();
         }
     }
