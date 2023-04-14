@@ -13,6 +13,8 @@
     // Connects to the database
     $db = new mysqli("localhost", "root", "", "cw2_students");
 
+    $db->query("ALTER TABLE student ADD COLUMN profile_picture blob not null varchar(255)");
+    
     // Deletes all records from the student table
     $db->query("DELETE FROM student");
 
