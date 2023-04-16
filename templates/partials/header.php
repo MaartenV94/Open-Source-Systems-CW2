@@ -9,5 +9,5 @@
    </head>
 
    <body>
-
-   <div class="container">
+   <div class="bg-light bg-gradient justify-content-center align-items-center vh-100">
+   <div class="container-fluid">
