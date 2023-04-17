@@ -18,6 +18,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
       <div class="navbar-nav">
+         <a href="index.php" class="nav-link text-light mx-4" aria-current="page">Home</a>
          <a href="modules.php" class="nav-link text-light mx-4" aria-current="page">My Modules</a>
          <a href="students.php" class="nav-link text-light mx-4">My Students</a>
          <a href="addstudent.php" class="nav-link text-light mx-4">Add Students</a>

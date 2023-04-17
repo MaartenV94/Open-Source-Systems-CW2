@@ -40,24 +40,34 @@ if (isset($_SESSION['id'])) {
       // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
+   <div class="container">
+   <div class="card">
+   <div class="card-header">
    <h2>My Details</h2>
+   </div>
+   <div class="card-body">
    <form name="frmdetails" action="" method="post">
-   First Name :
+   First Name:
    <input name="txtfirstname" type="text" class="form-control" value="{$row['firstname']}" />
-   Surname :
+   Surname:
    <input name="txtlastname" type="text" class="form-control" value="{$row['lastname']}" />
-   Number and Street :
+   Number and Street:
    <input name="txthouse" type="text" class="form-control" value="{$row['house']}" />
-   Town :
+   Town:
    <input name="txttown" type="text" class="form-control" value="{$row['town']}" />
-   County :
+   County:
    <input name="txtcounty" type="text" class="form-control" value="{$row['county']}" />
-   Country :
+   Country:
    <input name="txtcountry" type="text" class="form-control" value="{$row['country']}" />
-   Postcode :
+   Postcode:
    <input name="txtpostcode" type="text" class="form-control" value="{$row['postcode']}" />
+   </div>
+   <div class="card-footer">
    <input type="submit" value="Save" class="btn btn-outline-primary mb-3 mt-3" name="submit"/>
+   </div>
    </form>
+   </div>
+   </div>
 
 EOD;
 

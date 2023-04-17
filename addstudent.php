@@ -56,34 +56,44 @@ if (isset($_SESSION['id'])) {
         $data['content'] = <<<EOD
 
     <!-- HTML FORM -->
+    <div class="container">
+    <div class="card">
+    <div class="card-header">
     <h2>Add New Student</h2>
+    </div>
+    <div class="card-body">
     <form name="frmdetails" action="" method="post" enctype="multipart/form-data"">
 
     Student ID :
-    <input name="studentid" type="text" value="" class="form-control" />
+    <input name="studentid" type="text" value="" class="form-control mb-2" />
     Password :
-    <input name="password" type="password" value="" class="form-control" />
+    <input name="password" type="password" value="" class="form-control mb-2" />
     Date of Birth :
-    <input name="dob" type="date" value="" class="form-control" />
+    <input name="dob" type="date" value="" class="form-control mb-2" />
     First Name :
-    <input name="firstname" type="text" value="" class="form-control" />
+    <input name="firstname" type="text" value="" class="form-control mb-2" />
     Surname :
-    <input name="lastname" type="text"  value="" class="form-control" />
+    <input name="lastname" type="text"  value="" class="form-control mb-2" />
     Number and Street :
-    <input name="house" type="text"  value="" class="form-control" />
+    <input name="house" type="text"  value="" class="form-control mb-2" />
     Town :
-    <input name="town" type="text"  value="" class="form-control" />
+    <input name="town" type="text"  value="" class="form-control mb-2" />
     County :
-    <input name="county" type="text"  value="" class="form-control" />
+    <input name="county" type="text"  value="" class="form-control mb-2" />
     Country :
-    <input name="country" type="text"  value="" class="form-control" />
+    <input name="country" type="text"  value="" class="form-control mb-2" />
     Postcode :
-    <input name="postcode" type="text"  value="" class="form-control" />
+    <input name="postcode" type="text"  value="" class="form-control mb-2" />
     Profile Picture :
-    <input name="profile_picture" type="file" Value="" class="form-control" />
-
+    <input name="profile_picture" type="file" Value="" class="form-control mb-2" /><br/>
+    <div class="card-footer">  
     <input type="submit" value="Save" name="submit" class="btn btn-outline-primary mb-3 mt-3"/>
+    </div>
     </form>
+
+    </div>
+    </div>
+    </div><br>
 
 EOD;
 

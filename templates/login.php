@@ -10,6 +10,7 @@
    <br/>
    <input type="submit" value="Login" name="btnlogin" />
 </form> -->
+<img src='uploads/bnu-logo.webp' width='500' height='350' class='mx-auto d-block'>";
 
 <form name="frmLogin" action="authenticate.php" method="post" class="row justify-content-center">
    <div class="mb-3 col-sm-8">

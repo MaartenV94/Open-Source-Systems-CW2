@@ -13,7 +13,8 @@
    }
 
    if (isset($_SESSION['id'])) {
-      $data['content'] = "<p>Welcome to your dashboard.";
+      $data['content'] = "<img src='uploads/bnu-logo.webp' width='500' height='350' class='mx-auto d-block'>";
+      $data['content'] .= "<h1 class='text-center mt-5'>Welcome to your dashboard.<br>";
       echo template("templates/partials/nav.php");
       echo template("templates/default.php", $data);
    } else {
