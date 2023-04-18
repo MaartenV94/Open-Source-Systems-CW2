@@ -23,7 +23,7 @@
         echo "<td>" . $row['studentid'] . "</td>";
         echo "<td>" . $row['firstname'] . "</td>";
         echo "<td>" . $row['lastname'] . "</td>";
-        echo "<td><img src='getjpeg.php?studentid=" . $row['studentid']. "' height='100' widht='100'</td>";
+        echo "<td><img src='getjpeg.php?studentid=" . $row['studentid']. "' height='100' width='100' /></td>";
     }
 
     echo "</table>";

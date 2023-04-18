@@ -13,7 +13,10 @@
     // Connects to the database
     $db = new mysqli("localhost", "root", "", "cw2_students");
 
-    $db->query("ALTER TABLE student ADD COLUMN profile_picture blob not null varchar(255)");
+    // Adds a new column into the database called 'profile_picture'
+
+    //TODO: Drop IF EXISTS profile_picture
+    // $db->query("ALTER TABLE student ADD COLUMN profile_picture BLOB");
     
     // Deletes all records from the student table
     $db->query("DELETE FROM student");
@@ -29,19 +32,37 @@
     $db->query("ALTER TABLE student AUTO_INCREMENT = 1");
 
     // Loops through a range of student
-    foreach(range(20000001,29999999) as $x) {
+    foreach(range(1,20) as $x) {
         $student_id = $x;
 
-        // Inserts a new record into the student table using Faker generated data
-        $db->query("
-            INSERT INTO student (studentid, password, dob, firstname, 
-            lastname, house, town, county, country, postcode)
-            VALUES ('$student_id', '{$faker->password}', 
-            '{$faker->date}', '{$faker->firstName}', '{$faker->lastName}', '{$faker->word}', 
-            '{$faker->city}', '{$faker->city}', '{$faker->country}', '{$faker->postcode}')
-        ");
-    }
+        $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+        //TODO: escape strings to make safe for SQL
+
+        $date = mysqli_real_escape_string($db, $faker->date());
+        $firstname = mysqli_real_escape_string($db, $faker->firstName());
+        $lastname = mysqli_real_escape_string($db, $faker->lastname());
+        $house = mysqli_real_escape_string($db, $faker->word());
+        $town = mysqli_real_escape_string($db, $faker->city());
+        $county = mysqli_real_escape_string($db, $faker->city());
+        $country = mysqli_real_escape_string($db, $faker->country());
+        $postcode = mysqli_real_escape_string($db, $faker->postcode());
+
+
+        $sql = "
+        INSERT INTO student (studentid, password, dob, firstname, 
+        lastname, house, town, county, country, postcode)
+        VALUES ('$student_id', '$hashed_password', 
+        '{$date}', '{$firstname}', '{$lastname}', '{$house}', 
+        '{$town}', '{$county}', '{$country}', '{$postcode}')";
+
+        echo $sql . "<br />";
+
+        // Inserts a new record into the student table using Faker generated data
+        $db->query($sql);
+
+        echo $student_id . "<br />";
+    }
 
 
 ?>
