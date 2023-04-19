@@ -13,8 +13,6 @@
     // Connects to the database
     $db = new mysqli("localhost", "root", "", "cw2_students");
 
-    // Adds a new column into the database called 'profile_picture'
-
     //TODO: Drop IF EXISTS profile_picture
     // $db->query("ALTER TABLE student ADD COLUMN profile_picture BLOB");
     
@@ -37,8 +35,6 @@
 
         $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        //TODO: escape strings to make safe for SQL
-
         $date = mysqli_real_escape_string($db, $faker->date());
         $firstname = mysqli_real_escape_string($db, $faker->firstName());
         $lastname = mysqli_real_escape_string($db, $faker->lastname());
@@ -47,7 +43,6 @@
         $county = mysqli_real_escape_string($db, $faker->city());
         $country = mysqli_real_escape_string($db, $faker->country());
         $postcode = mysqli_real_escape_string($db, $faker->postcode());
-
 
         $sql = "
         INSERT INTO student (studentid, password, dob, firstname, 
