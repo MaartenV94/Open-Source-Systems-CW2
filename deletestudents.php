@@ -20,17 +20,17 @@
             header("Location: students.php");
         } else {
             // Show the confirmation message
-            $confirm_message = "Are you sure you want to delete?";
+            $confirm_message = "<div><h1 class='text-center'>Are you sure you want to delete?</h1>";
             $confirm_message .= "<br><br>";
             $confirm_message .= "<form method='POST'>";
             if (!empty($_POST['students'])) {
                 foreach ($_POST['students'] as $student_id) {
                     $confirm_message .= "<input type='hidden' name='students[]' value='$student_id'>";
                 }
-                $confirm_message .= "<input type='submit' name='confirm_delete' value='Yes' style='margin-right: 10px;'>";
+                $confirm_message .= "<input type='submit' class='btn btn-outline-danger' name='confirm_delete' value='Yes' style='margin-right: 10px;'>";
             }
-            $confirm_message .= "<input type='button' value='No' onclick='window.location.href=\"students.php\"'>";
-            $confirm_message .= "</form>";
+            $confirm_message .= "<input type='button' class='btn btn-outline-danger' value='No' onclick='window.location.href=\"students.php\"'>";
+            $confirm_message .= "</form></div>";
 
             echo $confirm_message;
         }

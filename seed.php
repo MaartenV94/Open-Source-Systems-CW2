@@ -13,8 +13,11 @@
     // Connects to the database
     $db = new mysqli("localhost", "root", "", "cw2_students");
 
-    //TODO: Drop IF EXISTS profile_picture
-    // $db->query("ALTER TABLE student ADD COLUMN profile_picture BLOB");
+    // Drop IF EXISTS profile_picture
+    //$db->query("ALTER TABLE IF EXISTS student DROP column IF EXISTS profile_picture");
+
+    // Adds column into database for image files to be uploaded into
+    //$db->query("ALTER TABLE student ADD COLUMN profile_picture BLOB");
     
     // Deletes all records from the student table
     $db->query("DELETE FROM student");
